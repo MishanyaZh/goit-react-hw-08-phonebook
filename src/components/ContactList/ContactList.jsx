@@ -6,12 +6,15 @@ import {
   fetchContactsAction,
   deleteContactAction,
 } from '../../redux/phonebook/phonebook-operations';
+import { getLoading } from '../../redux/phonebook/phonebook-selector';
+import Loader from 'react-loader-spinner';
 import toast from 'react-hot-toast';
 import css from './ContactList.module.css';
 
 const ContactList = () => {
   const dispatch = useDispatch();
   const visibleContacts = useSelector(getVisibleContacts);
+  const isLoading = useSelector(getLoading);
 
   useEffect(() => {
     dispatch(fetchContactsAction());
@@ -24,7 +27,18 @@ const ContactList = () => {
 
   return (
     <ul className={css.contactsList}>
-      {visibleContacts.length === 0 && <p>not Contact...</p>}
+      {isLoading && (
+        <div className={css.box}>
+          <Loader
+            type="Rings"
+            color="#00BFFF"
+            height={50}
+            width={50}
+            position="center"
+          />
+        </div>
+      )}
+      {visibleContacts.length === 0 && <p>not Contacts...</p>}
       {visibleContacts &&
         visibleContacts.map(({ id, name, number }) => (
           <li key={id} className={css.contactsItem}>

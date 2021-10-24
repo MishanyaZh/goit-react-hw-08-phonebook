@@ -55,3 +55,8 @@
   box-shadow: 1px 1px 11px 1px #062afa;
   transition-duration: 0.1s;
 }
+
+.box {
+  display: block;
+  margin: 0 auto;
+}
