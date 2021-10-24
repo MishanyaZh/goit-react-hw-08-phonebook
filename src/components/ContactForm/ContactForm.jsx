@@ -1,31 +1,25 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
-import contactActions from '../redux/contact-app/contact-actions';
 import { useDispatch } from 'react-redux';
+
+import { addContactAction } from '../../redux/phonebook/phonebook-operations';
+
+// import toast from 'react-hot-toast';
 import css from './ContactForm.module.css';
 
-const ContactForm = ({ formSubmitHandler }) => {
+const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
 
-  const handleChangeName = event => {
-    setName(event.currentTarget.value);
-  };
+  const onSubmitForm = (name, number) =>
+    dispatch(addContactAction({ name, number }));
 
-  const handleChangeNumber = event => {
-    setNumber(event.currentTarget.value);
-  };
+  const handleChangeName = e => setName(e.currentTarget.value);
+  const handleChangeNumber = e => setNumber(e.currentTarget.value);
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    // old code
-    // formSubmitHandler({ name, number }); -VS-new=> dispatch(contactActions.formSubmitHandler({ name, number }));
-    dispatch(contactActions.formSubmitHandler({ name, number }));
-    resetState();
-  };
-
-  const resetState = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    onSubmitForm(name, number);
     setName('');
     setNumber('');
   };
@@ -68,16 +62,4 @@ const ContactForm = ({ formSubmitHandler }) => {
   );
 };
 
-// const mapDispatchToProps = dispatch => ({
-//   formSubmitHandler: ({ name, number }) =>
-//     dispatch(contactActions.formSubmitHandler({ name, number })),
-// });
-
-// export default connect(null, mapDispatchToProps)(ContactForm);
-
 export default ContactForm;
-
-ContactForm.propTypes = {
-  formSubmitHandler: PropTypes.func,
-  handleChange: PropTypes.string,
-};
