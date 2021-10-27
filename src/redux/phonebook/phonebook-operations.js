@@ -8,7 +8,6 @@ export const fetchContactsAction = createAsyncThunk(
   async () => {
     try {
       const responce = await axios.get('/contacts');
-      console.log(responce.data);
       return responce.data;
       // return await axios.get('/contacts');
     } catch (error) {}
@@ -18,11 +17,9 @@ export const fetchContactsAction = createAsyncThunk(
 export const addContactAction = createAsyncThunk(
   'contacts/addContacts',
   async contact => {
-    console.log(`contact`, contact);
     // return await axios.post('/contacts', contact );
     try {
       const responce = await axios.post('/contacts', contact);
-      console.log(responce);
       return responce.data;
     } catch (error) {
       console.log(error);

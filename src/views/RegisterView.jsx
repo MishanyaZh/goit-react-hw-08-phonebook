@@ -2,16 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../redux/auth/auth-operations';
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import { Form, Col, Row, Button, Container } from 'react-bootstrap';
 
 const RegisterView = () => {
   const dispatch = useDispatch();
@@ -41,38 +32,56 @@ const RegisterView = () => {
   };
 
   return (
-    <div>
+    <Container>
       <h1>Страница регистрации</h1>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group>
+          <Row>
+            <Col>
+              <Form.Label>Имя</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                required
+                value={name}
+                onChange={handleChange}
+              />
+            </Col>
+          </Row>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+          <Form.Label>Почта</Form.Label>
+          <Row>
+            <Col>
+              <Form.Control
+                type="email"
+                name="email"
+                required
+                value={email}
+                onChange={handleChange}
+              />
+            </Col>
+          </Row>
 
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit">Зарегистрироваться</button>
-      </form>
-    </div>
+          <Form.Label>Пароль</Form.Label>
+          <Row>
+            <Col>
+              <Form.Control
+                type="password"
+                name="password"
+                required
+                value={password}
+                onChange={handleChange}
+              />
+            </Col>
+          </Row>
+        </Form.Group>
+        <Row>
+          <Col>
+            <Button type="submit">Зарегистрироваться</Button>
+          </Col>
+        </Row>
+      </Form>
+    </Container>
   );
 };
 

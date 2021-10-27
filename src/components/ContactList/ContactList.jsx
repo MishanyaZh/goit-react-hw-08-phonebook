@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getVisibleContacts } from '../../redux/phonebook/phonebook-selector';
@@ -61,7 +61,7 @@ const ContactList = () => {
 
 export default ContactList;
 
-// ContactList.propTypes = {
-//   contacts: PropTypes.array,
-//   onDeleteContact: PropTypes.func,
-// };
+ContactList.propTypes = {
+  contacts: PropTypes.array,
+  onDeleteContact: PropTypes.func,
+};

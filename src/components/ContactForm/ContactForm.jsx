@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 
 import { addContactAction } from '../../redux/phonebook/phonebook-operations';
 
-// import toast from 'react-hot-toast';
 import css from './ContactForm.module.css';
 
 const ContactForm = () => {
