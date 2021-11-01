@@ -33,12 +33,12 @@ const RegisterView = () => {
 
   return (
     <Container>
-      <h1>Страница регистрации</h1>
+      <h1>Registration page</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Row>
             <Col>
-              <Form.Label>Имя</Form.Label>
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
@@ -49,7 +49,7 @@ const RegisterView = () => {
             </Col>
           </Row>
 
-          <Form.Label>Почта</Form.Label>
+          <Form.Label>Mail</Form.Label>
           <Row>
             <Col>
               <Form.Control
@@ -62,7 +62,7 @@ const RegisterView = () => {
             </Col>
           </Row>
 
-          <Form.Label>Пароль</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Row>
             <Col>
               <Form.Control
@@ -77,7 +77,7 @@ const RegisterView = () => {
         </Form.Group>
         <Row>
           <Col>
-            <Button type="submit">Зарегистрироваться</Button>
+            <Button type="submit">Register</Button>
           </Col>
         </Row>
       </Form>

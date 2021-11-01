@@ -38,7 +38,7 @@ const ContactList = () => {
           />
         </div>
       )}
-      {visibleContacts.length === 0 && <p>not Contacts...</p>}
+      {visibleContacts.length === 0 && <p>Contact list is empty...</p>}
       {visibleContacts &&
         visibleContacts.map(({ id, name, number }) => (
           <li key={id} className={css.contactsItem}>

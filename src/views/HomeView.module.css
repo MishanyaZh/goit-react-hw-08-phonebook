@@ -1,0 +1,18 @@
+.container {
+  min-height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../assets/images/tel.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* .title {
+  font-weight: 500;
+  font-size: 48px;
+  text-align: center;
+  background-color: rgba(113, 90, 68, 0.2); 
+  color: rgba(229, 21, 31, 0.5);
+  border-radius: 5px;
+} */

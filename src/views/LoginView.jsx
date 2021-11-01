@@ -10,14 +10,7 @@ export default function LoginView() {
   const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
-      default:
-        return;
-    }
+    name === 'email' ? setEmail(value) : setPassword(value);
   };
 
   const handleSubmit = e => {
@@ -29,12 +22,12 @@ export default function LoginView() {
 
   return (
     <Container>
-      <h1>Страница логина</h1>
+      <h1>Login page</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Row>
             <Col>
-              <Form.Label>Почта</Form.Label>
+              <Form.Label>email:</Form.Label>
               <Form.Control
                 type="email"
                 name="email"
@@ -45,7 +38,7 @@ export default function LoginView() {
             </Col>
           </Row>
 
-          <Form.Label>Пароль</Form.Label>
+          <Form.Label>password:</Form.Label>
           <Row>
             <Col>
               <Form.Control
@@ -59,7 +52,7 @@ export default function LoginView() {
           </Row>
           <Row>
             <Col>
-              <Button type="submit">Вход</Button>
+              <Button type="submit">Log in</Button>
             </Col>
           </Row>
         </Form.Group>

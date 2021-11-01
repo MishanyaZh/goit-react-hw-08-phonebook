@@ -5,8 +5,8 @@ import { Switch } from 'react-router-dom';
 import authOperations from './redux/auth/auth-operations';
 import authSelectors from './redux/auth/auth-selectors';
 
-import PrivateRoute from './components/PrivateRoute';
-import PublicRoute from './components/PublicRoute';
+import PrivateRoute from './components/routes/PrivateRoute';
+import PublicRoute from './components/routes/PublicRoute';
 import BoxMain from './components/BoxMain/BoxMain';
 import AppBar from './components/AppBar/AppBar';
 
@@ -23,32 +23,30 @@ const App = () => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  return (
-    !isFetchingCurrentUser && (
-      <BoxMain>
-        <AppBar />
-        <Switch>
-          <Suspense fallback={<p>Загружаем...</p>}>
-            <PublicRoute exact path="/">
-              <HomeView />
-            </PublicRoute>
+  return !isFetchingCurrentUser ? (
+    <BoxMain>
+      <AppBar />
+      <Switch>
+        <Suspense fallback={<p>Загружаем...</p>}>
+          <PublicRoute exact path="/">
+            <HomeView />
+          </PublicRoute>
 
-            <PublicRoute exact path="/register" restricted>
-              <RegisterView />
-            </PublicRoute>
+          <PublicRoute exact path="/register" restricted>
+            <RegisterView />
+          </PublicRoute>
 
-            <PublicRoute exact path="/login" redirectTo="/contacts" restricted>
-              <LoginView />
-            </PublicRoute>
+          <PublicRoute exact path="/login" redirectTo="/contacts" restricted>
+            <LoginView />
+          </PublicRoute>
 
-            <PrivateRoute path="/contacts" redirectTo="/login">
-              <ContactsView />
-            </PrivateRoute>
-          </Suspense>
-        </Switch>
-      </BoxMain>
-    )
-  );
+          <PrivateRoute path="/contacts" redirectTo="/login">
+            <ContactsView />
+          </PrivateRoute>
+        </Suspense>
+      </Switch>
+    </BoxMain>
+  ) : null;
 };
 
 export default App;

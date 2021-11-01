@@ -16,7 +16,7 @@ const Navigation = () => {
         className={styles.link}
         activeClassName={styles.activeLink}
       >
-        Главная
+        Main
       </NavLink>
 
       {isLoggedIn && (
