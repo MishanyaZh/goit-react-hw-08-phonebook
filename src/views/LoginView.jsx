@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import authOperations from '../redux/auth/auth-operations';
 
 import { Form, Col, Row, Button, Container } from 'react-bootstrap';
+import css from '../views/HomeView.module.css';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -22,12 +23,12 @@ export default function LoginView() {
 
   return (
     <Container>
-      <h1>Login page</h1>
+      <h1 className={css.color}>Login page</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Row>
             <Col>
-              <Form.Label>email:</Form.Label>
+              <Form.Label className={css.color}>email:</Form.Label>
               <Form.Control
                 type="email"
                 name="email"
@@ -38,7 +39,7 @@ export default function LoginView() {
             </Col>
           </Row>
 
-          <Form.Label>password:</Form.Label>
+          <Form.Label className={css.color}>password:</Form.Label>
           <Row>
             <Col>
               <Form.Control

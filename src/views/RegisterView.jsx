@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import authOperations from '../redux/auth/auth-operations';
 
 import { Form, Col, Row, Button, Container } from 'react-bootstrap';
+import css from '../views/HomeView.module.css';
 
 const RegisterView = () => {
   const dispatch = useDispatch();
@@ -33,12 +34,12 @@ const RegisterView = () => {
 
   return (
     <Container>
-      <h1>Registration page</h1>
+      <h1 className={css.color}>Registration page</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Row>
             <Col>
-              <Form.Label>Name</Form.Label>
+              <Form.Label className={css.color}>Name</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
@@ -49,7 +50,7 @@ const RegisterView = () => {
             </Col>
           </Row>
 
-          <Form.Label>Mail</Form.Label>
+          <Form.Label className={css.color}>Mail</Form.Label>
           <Row>
             <Col>
               <Form.Control
@@ -62,7 +63,7 @@ const RegisterView = () => {
             </Col>
           </Row>
 
-          <Form.Label>Password</Form.Label>
+          <Form.Label className={css.color}>Password</Form.Label>
           <Row>
             <Col>
               <Form.Control
