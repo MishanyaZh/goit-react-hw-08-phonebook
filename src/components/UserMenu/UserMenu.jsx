@@ -4,7 +4,6 @@ import authOperations from '../../redux/auth/auth-operations';
 import defaultAvatar from '../../assets/images/default-avatar.png';
 
 import styles from '../UserMenu/UserMenu.module.css';
-import Button from 'react-bootstrap/Button';
 
 const UserMenu = () => {
   const dispatch = useDispatch();

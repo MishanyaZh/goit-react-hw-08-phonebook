@@ -78,7 +78,9 @@ const RegisterView = () => {
         </Form.Group>
         <Row>
           <Col>
-            <Button type="submit">Register</Button>
+            <Button className={css.button} type="submit">
+              Register
+            </Button>
           </Col>
         </Row>
       </Form>

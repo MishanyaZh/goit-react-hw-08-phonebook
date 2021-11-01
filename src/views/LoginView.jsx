@@ -53,7 +53,9 @@ export default function LoginView() {
           </Row>
           <Row>
             <Col>
-              <Button type="submit">Log in</Button>
+              <Button className={css.button} type="submit">
+                Log in
+              </Button>
             </Col>
           </Row>
         </Form.Group>
