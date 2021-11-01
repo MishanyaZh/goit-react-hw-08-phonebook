@@ -10,6 +10,8 @@ import PublicRoute from './components/routes/PublicRoute';
 import BoxMain from './components/BoxMain/BoxMain';
 import AppBar from './components/AppBar/AppBar';
 
+import Loader from 'react-loader-spinner';
+
 const HomeView = lazy(() => import('./views/HomeView'));
 const RegisterView = lazy(() => import('./views/RegisterView'));
 const LoginView = lazy(() => import('./views/LoginView'));
@@ -27,7 +29,17 @@ const App = () => {
     <BoxMain>
       <AppBar />
       <Switch>
-        <Suspense fallback={<p>Загружаем...</p>}>
+        <Suspense
+          fallback={
+            <Loader
+              type="Rings"
+              color="#00BFFF"
+              height={50}
+              width={50}
+              position="center"
+            />
+          }
+        >
           <PublicRoute exact path="/">
             <HomeView />
           </PublicRoute>
