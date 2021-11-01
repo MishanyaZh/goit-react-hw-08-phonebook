@@ -15,9 +15,13 @@ const UserMenu = () => {
     <div className={styles.container}>
       <img src={avatar} alt="" width="32" className={styles.avatar} />
       <span className={styles.name}>Welcome, {name}</span>
-      <Button type="button" onClick={() => dispatch(authOperations.logOut())}>
+      <button
+        className={styles.formButton}
+        type="button"
+        onClick={() => dispatch(authOperations.logOut())}
+      >
         Exit
-      </Button>
+      </button>
     </div>
   );
 };

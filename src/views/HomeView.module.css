@@ -1,5 +1,6 @@
 .container {
-  min-height: calc(100vh - 50px);
+  /* min-height: calc(100vh - 50px); */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,10 +18,4 @@
   background-color: rgba(113, 90, 68, 0.2);
   color: rgba(12, 12, 12, 0.5);
   border-radius: 5px;
-}
-
-@media screen and (max-width: 500px) {
-  .title {
-    margin-bottom: -100%;
-  }
 }
