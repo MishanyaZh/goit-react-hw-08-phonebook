@@ -3,7 +3,7 @@ import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/auth-operations';
 import defaultAvatar from '../../assets/images/default-avatar.png';
 
-import styles from '../AppBar/AppBar.module.css';
+import styles from '../UserMenu/UserMenu.module.css';
 import Button from 'react-bootstrap/Button';
 
 const UserMenu = () => {
@@ -16,7 +16,7 @@ const UserMenu = () => {
       <img src={avatar} alt="" width="32" className={styles.avatar} />
       <span className={styles.name}>Welcome, {name}</span>
       <Button type="button" onClick={() => dispatch(authOperations.logOut())}>
-        Get out
+        Exit
       </Button>
     </div>
   );

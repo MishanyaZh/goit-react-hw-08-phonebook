@@ -3,16 +3,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../assets/images/tel.jpg);
+  background-image: url(../assets/images/telephone-gadf67dbc7_1280.jpg);
   background-size: cover;
   background-position: center;
+  background-color: rgb(163, 170, 228);
 }
 
-/* .title {
+.title {
+  display: block;
   font-weight: 500;
   font-size: 48px;
   text-align: center;
-  background-color: rgba(113, 90, 68, 0.2); 
-  color: rgba(229, 21, 31, 0.5);
+  background-color: rgba(113, 90, 68, 0.2);
+  color: rgba(12, 12, 12, 0.5);
   border-radius: 5px;
-} */
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    margin-bottom: -100%;
+  }
+}
