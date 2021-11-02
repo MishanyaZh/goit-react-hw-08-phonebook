@@ -1,5 +1,6 @@
 .nav {
-  /* position: fixed; */
+  position: fixed;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   top: 0;
@@ -10,8 +11,9 @@
 }
 
 .btn {
+  position: fixed;
   display: none;
-  position: absolute;
+  /* position: absolute; */
   width: 78px;
   height: 35px;
   right: 5px;
@@ -36,6 +38,8 @@
   .nav {
     flex-direction: column;
     height: auto;
+    align-items: start;
+    /* margin-left: -3px; */
   }
 
   .btn {

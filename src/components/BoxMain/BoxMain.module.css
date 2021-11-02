@@ -1,6 +1,7 @@
 .box {
   margin-left: auto;
   margin-right: auto;
+  min-height: 100vh;
   background: rgb(205, 240, 241);
   background-image: url(../../assets/images/business-geb0b38804_1280.jpg);
   background-size: cover;

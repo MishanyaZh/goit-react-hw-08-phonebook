@@ -32,10 +32,10 @@ export default function AppBar() {
   return (
     <header>
       {(toggleMenu || screenWidth > 500) && (
-        <div className={s.nav}>
+        <nav onClick={toggleNav} className={s.nav}>
           <Navigation />
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
-        </div>
+        </nav>
       )}
       <button onClick={toggleNav} className={s.btn}>
         Menu
